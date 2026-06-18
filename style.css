@@ -37,9 +37,14 @@ body{
     width: 25%;
     padding-right: 30px;
 }
-.banner1{
-    display: flex;
-    justify-content: center;
+<div class="ret">Alguma coisa</div>
+
+.ret
+{
+height: 100px;
+width: 100px;
+background: red;
+color: blue;
 }
 .estudante_titulo{
     padding: 50px;
