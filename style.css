@@ -5,6 +5,7 @@
 }
 body{
     font-family: "Poppins", sans-serif;
+    background-color: #E1DCC9;
     }
     header{
         background-color: #112E81;
@@ -41,8 +42,8 @@ body{
 {
 height: 500px;
 width: 1670;
-background: rgb(163, 139, 139);
-color: rgb(93, 93, 182);
+background: #412D15;
+color: rgb(255, 255, 255);
 font-size: 20px
 }
 
