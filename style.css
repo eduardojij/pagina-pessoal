@@ -32,6 +32,10 @@ nav li a {
 nav li a:hover {
     background-color: #4CAF50;
 }
+body {
+    margin: 0;
+    padding-top: 55px;
+}
 
 .cabecalho-itens{
     max-width: 1980px;
