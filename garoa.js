@@ -1,65 +1,43 @@
 
+window.addEventListener("load", function () {
 
-// Mensagem da página de contato
-function mostrarMensagem() {
-    document.getElementById("mensagem").innerHTML =
-        "Obrigado por visitar meu site! 😁";
-}
+    console.log("CHUVA INICIADA!");
 
-// Criar chuva de fundo
-const quantidadeGotas = 60;
+    // Criar gotas
+    for (let i = 0; i < 100; i++) {
 
-for (let i = 0; i < quantidadeGotas; i++) {
-    let gota = document.createElement("div");
+        const gota = document.createElement("div");
 
-    gota.className = "gota-chuva";
-    gota.innerHTML = "💧";
+        gota.innerHTML = "💧";
 
-    gota.style.left = Math.random() * 100 + "vw";
-    gota.style.animationDuration = (2 + Math.random() * 4) + "s";
-    gota.style.animationDelay = Math.random() * 5 + "s";
-    gota.style.fontSize = (10 + Math.random() * 15) + "px";
-    gota.style.opacity = 0.2 + Math.random() * 0.5;
+        gota.style.position = "fixed";
+        gota.style.left = Math.random() * 100 + "vw";
+        gota.style.top = "-50px";
+        gota.style.fontSize = "20px";
+        gota.style.pointerEvents = "none";
+        gota.style.zIndex = "99999";
 
-    document.body.appendChild(gota);
-}
+        gota.style.animation =
+            `cair ${2 + Math.random() * 3}s linear ${Math.random() * 5}s infinite`;
 
-// Estilo e animação da chuva
-let estilo = document.createElement("style");
-
-estilo.innerHTML = `
-.gota-chuva {
-    position: fixed;
-    top: -40px;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-    animation: cair linear infinite;
-}
-
-@keyframes cair {
-    0% {
-        transform: translateY(-10vh);
+        document.body.appendChild(gota);
     }
 
-    100% {
-        transform: translateY(110vh);
-    }
-}
+    // Criar animação
+    const css = document.createElement("style");
 
-/* Conteúdo do site acima da chuva */
-body > *:not(.gota-chuva) {
-    position: relative;
-    z-index: 1;
-}
+    css.innerHTML = `
+        @keyframes cair {
+            0% {
+                transform: translateY(0);
+            }
 
-/* Evita animações para quem prefere movimento reduzido */
-@media (prefers-reduced-motion: reduce) {
-    .gota-chuva {
-        animation: none;
-        display: none;
-    }
-}
-`;
+            100% {
+                transform: translateY(110vh);
+            }
+        }
+    `;
 
-document.head.appendChild(estilo);
+    document.head.appendChild(css);
+
+});
