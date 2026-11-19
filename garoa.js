@@ -2,7 +2,7 @@
 // Mensagem da página de contato
 function mostrarMensagem() {
     document.getElementById("mensagem").innerHTML =
-    "Obrigado por visitar meu site!";
+    "Obrigado por visitar meu site! 😁";
 }
 
 // Criar chuva de fundo
